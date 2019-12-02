@@ -1,0 +1,6 @@
+---
+name: myextension
+---
+SilverStripe\Forms\FormField:
+  extensions:
+    - SOCIALFORUM\DefaultFormField_Extensions

@@ -1,0 +1,10 @@
+/silverstripe-cache/
+/.env
+/vendor/
+/themes/simple/
+/_resources/
+/public/_resources/
+ss.error.log
+.env
+.idea/
+.DS_Store
