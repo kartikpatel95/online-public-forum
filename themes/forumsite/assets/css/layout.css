@@ -1,0 +1,47 @@
+/* flexy sticky footer */
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* Takes away the default margin which would otherwise make the body extend beyond 100% of page height */
+  display: -webkit-box;
+  display: flex;
+  /* Items have equal height */
+  /* same as display:flex for IE11 */
+  display: -webkit-flex;
+  /* iPad & Safari */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  /* layout item's content vertically */
+  /* flex-direction: column for IE11 */
+  height: 100%;
+  /* Needed for IE11 so that body takes up at least 100% of height */
+}
+
+header {
+  -webkit-box-flex: 0;
+  flex: none;
+}
+
+.main {
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+  flex-basis: auto;
+  /*background-color: #eee;  let's fade to grey...  ' */
+}
+
+footer {
+  -webkit-box-flex: 0;
+  flex: none;
+}
+
+.footer > span {
+  color: white;
+}
+
+/*flex footer ends here*/
+

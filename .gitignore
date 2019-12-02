@@ -8,3 +8,5 @@ ss.error.log
 .env
 .idea/
 .DS_Store
+
+node_modules

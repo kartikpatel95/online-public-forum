@@ -37,6 +37,9 @@
             "themes/forumsite/assets/"
         ]
     },
+    "scripts": {
+      "build": "php vendor/silverstripe/framework/cli-script.php /dev/build"
+    },
     "config": {
         "process-timeout": 600
     },
