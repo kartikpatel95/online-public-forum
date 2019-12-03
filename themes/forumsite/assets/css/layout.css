@@ -50,11 +50,28 @@ footer {
 }
 
 .footer .footer-wrapper {
-  min-height: 100px;
   background-color: #36454f;
+  padding: 25px 0;
 }
 
 .footer .footer-tagline {
   background-color: #292929;
+}
+
+.footer .footer-headings {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.footer .social-icon {
+  font-size: 25px;
+  color: #fff;
+  padding: 0 5px;
+}
+
+.footer .logo {
+  width: 200px;
 }
 

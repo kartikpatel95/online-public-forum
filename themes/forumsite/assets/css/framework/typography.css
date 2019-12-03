@@ -20,6 +20,10 @@ body a:link {
 
 /* this sets the highlight color when links are tapped on Safari (browser) on iPhone */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* HEADERS */
 .typography h1,

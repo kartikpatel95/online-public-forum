@@ -2,6 +2,7 @@
 
 namespace SOCIALFORUM;
 
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\FieldList;
@@ -41,7 +42,9 @@ class SiteConfig_Extension extends DataExtension
    */
   public function updateCMSFields(FieldList $fields)
   {
-    $owner = $this->owner;
+    $fields->addFieldToTab('Root.Main', $logo = UploadField::create('Logo', 'Logo'));
+    $logo->setFolderName('Logos');
+    $logo->setAllowedExtensions(['jpeg', 'jpg', 'png', 'gif', 'svg']);
     $fields->addFieldToTab('Root.Social', $this->getSocialItems());
     return $fields;
   }
