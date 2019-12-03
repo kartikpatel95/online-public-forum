@@ -35,10 +35,10 @@ namespace {
         public function getCMSFields()
         {
           $fields = parent::getCMSFields();
-          $fields->addFieldToTab('Root.Banner', HtmlEditorField::create('BannerContent','Banner Content'));
           $fields->addFieldToTab('Root.Banner', $banner = UploadField::create('Banner','Banner'));
           $banner->setFolderName('Banners');
           $banner->setAllowedExtensions(['jpeg', 'jpg', 'png', 'gif']);
+          $fields->addFieldToTab('Root.Banner', HtmlEditorField::create('BannerContent','Banner Content'));
           return $fields;
         }
     }
