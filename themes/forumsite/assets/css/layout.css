@@ -111,3 +111,17 @@ footer {
   color: #fff;
 }
 
+.home h1,
+.home h2,
+.home h3,
+.home h4,
+.home h5,
+.home h6,
+.home p {
+  color: #fff;
+}
+
+.home .content-wrapper {
+  background-color: #151719;
+}
+
