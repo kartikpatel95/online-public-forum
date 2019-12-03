@@ -78,27 +78,35 @@ footer {
 .banner {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 350px;
+  min-height: 350px;
 }
 
-.banner .banner-content {
+.banner .banner-content-wrapper {
+  min-height: inherit;
+}
+
+.banner .banner-content-wrapper .banner-content {
   padding: 30px 20px;
   text-shadow: 2px 2px black;
 }
 
+.banner .banner-content-wrapper .header-spacer {
+  height: 100px;
+}
+
 @media (min-width: 768px) {
-  .banner .banner-content {
-    background-color: rgba(0, 0, 0, 0.8);
+  .banner .banner-content-wrapper .banner-content {
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 
-.banner h1,
-.banner h2,
-.banner h3,
-.banner h4,
-.banner h5,
-.banner h6,
-.banner p {
+.banner .banner-content-wrapper h1,
+.banner .banner-content-wrapper h2,
+.banner .banner-content-wrapper h3,
+.banner .banner-content-wrapper h4,
+.banner .banner-content-wrapper h5,
+.banner .banner-content-wrapper h6,
+.banner .banner-content-wrapper p {
   margin-bottom: 0;
   color: #fff;
 }

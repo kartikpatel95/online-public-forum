@@ -1,5 +1,7 @@
 /* BASE TYPOGRPHY */
-
+html, body {
+  height: 100%;
+}
 /* These are the default styles for the Simple theme */
 body {
     font-size: 14px; /* This overrides the browsers default font size */
