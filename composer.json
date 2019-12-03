@@ -40,13 +40,14 @@
             "web.config"
         ],
         "expose": [
-            "themes/forumsite/assets/"
+            "themes/forumsite/assets/css",
+            "themes/forumsite/assets/javascript"
         ]
     },
     "scripts": {
-      "build": "php vendor/silverstripe/framework/cli-script.php /dev/build",
-      "dep": "php vendor/deployer/deployer/bin/dep",
-      "unlock": "dep deploy:unlock"
+        "build": "php vendor/silverstripe/framework/cli-script.php /dev/build",
+        "dep": "php vendor/deployer/deployer/bin/dep",
+        "unlock": "dep deploy:unlock"
     },
     "config": {
         "process-timeout": 600
