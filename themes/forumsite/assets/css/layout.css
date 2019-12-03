@@ -45,3 +45,16 @@ footer {
 
 /*flex footer ends here*/
 
+.footer {
+  color: #fff;
+}
+
+.footer .footer-wrapper {
+  min-height: 100px;
+  background-color: #36454f;
+}
+
+.footer .footer-tagline {
+  background-color: #292929;
+}
+
