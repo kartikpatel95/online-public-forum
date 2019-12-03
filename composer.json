@@ -14,7 +14,9 @@
         "silverstripe/recipe-plugin": "^1.2",
         "silverstripe/recipe-cms": "^4.4.3@stable",
         "gorriecoe/silverstripe-linkfield": "^1.0",
-        "gorriecoe/silverstripe-link": "^1.2"
+        "gorriecoe/silverstripe-link": "^1.2",
+        "jonom/focuspoint": "^3.1",
+        "undefinedoffset/sortablegridfield": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",

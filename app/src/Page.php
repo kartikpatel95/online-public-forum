@@ -7,6 +7,9 @@ namespace {
     use SilverStripe\Assets\Image;
     use SilverStripe\CMS\Model\SiteTree;
 
+    /**
+    * @property HTMLText $BannerContent
+    */
     class Page extends SiteTree
     {
         private static $db = [

@@ -4,3 +4,6 @@ name: myextension
 SilverStripe\Forms\FormField:
   extensions:
     - SOCIALFORUM\DefaultFormField_Extensions
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SOCIALFORUM\SiteConfig_Extension
