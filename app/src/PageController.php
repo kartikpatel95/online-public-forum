@@ -24,5 +24,20 @@ namespace {
             Requirements::css("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
             Requirements::css("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
         }
+
+        /**
+        * apply class name based on banenr
+        * @return string
+        */
+        public function BannerCheck():string
+        {
+          $class = null;
+          if ($this->Banner()->ID) {
+            $class = "banner";
+          }else{
+            $class = "no-banner";
+          }
+          return $class;
+        }
     }
 }

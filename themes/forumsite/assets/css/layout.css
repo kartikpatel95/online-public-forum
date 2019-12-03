@@ -75,3 +75,31 @@ footer {
   width: 200px;
 }
 
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+
+.banner .banner-content {
+  padding: 30px 20px;
+  text-shadow: 2px 2px black;
+}
+
+@media (min-width: 768px) {
+  .banner .banner-content {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.banner h1,
+.banner h2,
+.banner h3,
+.banner h4,
+.banner h5,
+.banner h6,
+.banner p {
+  margin-bottom: 0;
+  color: #fff;
+}
+
