@@ -1,4 +1,4 @@
-<% include $Banner %>
+<% include Banner %>
 <div class="container">
     <% if $Title %>
         <h1>
