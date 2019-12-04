@@ -126,22 +126,38 @@ footer {
   color: #fff;
 }
 
-.home .content-wrapper {
+.content-wrapper {
   background-color: #151719;
 }
 
-.home .campaigns {
+.campaigns {
   padding: 15px 25px;
   box-shadow: 10px 10px 6px #eee;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.13);
+  margin: 0 5px;
 }
 
-.home .campaigns .cpation-heading {
+.campaigns .cpation-heading {
   font-size: 18px;
   font-weight: 700;
   text-align: center;
   padding: 10px 0;
   color: #00446f;
+}
+
+.campaigns img.tile-images {
+  width: 300px;
+  height: 200px;
+}
+
+.campaign h1,
+.campaign h2,
+.campaign h3,
+.campaign h4,
+.campaign h5,
+.campaign h6,
+.campaign p {
+  color: #fff;
 }
 
