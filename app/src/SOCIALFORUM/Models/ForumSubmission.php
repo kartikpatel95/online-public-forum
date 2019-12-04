@@ -5,12 +5,6 @@ namespace SOCIALFORUM;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\ValidationResult;
 
-/**
- * Description
- *
- * @package silverstripe
- * @subpackage mysite
- */
 class ForumSubmission extends DataObject
 {
   /**
@@ -50,6 +44,16 @@ class ForumSubmission extends DataObject
     'Email',
     'PhoneNumber' => 'Phone Number',
     'Summary'
+  ];
+
+  /**
+   * Defines a default list of filters for the search context
+   * @var array
+   */
+  private static $searchable_fields = [
+    'Name',
+    'Email',
+    'PhoneNumber'
   ];
 
   public function validate()

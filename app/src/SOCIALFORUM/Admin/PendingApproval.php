@@ -1,5 +1,7 @@
 <?php
 
+namespace SOCIALFORUM;
+
 use SilverStripe\Admin\ModelAdmin;
 /**
  * Description
