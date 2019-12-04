@@ -1,5 +1,5 @@
 <% include Banner %>
-<div class="container">
+<div class="container mt-3">
     <% if $Title %>
         <h1>
             $Title
