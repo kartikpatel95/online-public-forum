@@ -12,7 +12,7 @@
         <% include Header %>
     </header>
         <div class="main">
-            <div class="typography">
+            <div class="typography h-100">
                 $Layout
             </div>
         </div>

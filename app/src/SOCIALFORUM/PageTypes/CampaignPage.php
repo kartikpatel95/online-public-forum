@@ -120,4 +120,15 @@ class CampaignPage extends \Page
     }
     return $result;
   }
+
+  /**
+  * Based on the campaign ID displays if there are available forums or not
+  */
+  public function getCampaignStatus($id){
+    $forums = ForumPage::get()->filter([
+        'ParentID' => $id,
+        'CloseDate:GreaterThanOrEqual'  => Date('Y-m-d h:m:s')
+      ]);
+    return count($forums) > 0 ? "Fourms are still Open" : "Forums are all Closed";
+  }
 }

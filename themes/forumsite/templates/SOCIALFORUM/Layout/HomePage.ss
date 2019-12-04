@@ -22,7 +22,7 @@
                   $TileCaption
                 </div>
                 <div class="open-close">
-                  Put if open or close here based on fourms
+                  $getCampaignStatus($ID)
                 </div>
               </a>
             </div>

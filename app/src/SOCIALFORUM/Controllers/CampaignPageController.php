@@ -11,7 +11,7 @@ class CampaignPageController extends \PageController {
   {
     $forums = ForumPage::get()->filter([
       'ParentID' => $this->ID,
-      'OpenDate:LessThan' => Date('Y-m-d h:m:s')
+      'OpenDate:LessThanOrEqual' => Date('Y-m-d h:m:s')
     ]);
     return $forums;
   }
