@@ -47,6 +47,14 @@ class ForumPage extends \Page
   ];
 
   /**
+   * Has_many relationship
+   * @var array
+   */
+  private static $has_many = [
+    'ForumSubmissions' => ForumSubmission::class,
+  ];
+
+  /**
    * Relationship version ownership
    * @var array
    */
@@ -77,6 +85,9 @@ class ForumPage extends \Page
     return $fields;
   }
 
+  /**
+  * @return RequiredFields
+  */
   public function getCMSValidator()
   {
     return RequiredFields::create([
@@ -86,6 +97,7 @@ class ForumPage extends \Page
 
   /**
   * Gets text for tile based on close date
+  * @return string
   */
   public function getOpenClosedStatus()
   {

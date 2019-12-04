@@ -2,6 +2,10 @@
 
 namespace SOCIALFORUM;
 
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\ValidationResult;
 
@@ -35,6 +39,14 @@ class ForumSubmission extends DataObject
   ];
 
   /**
+   * Has_one relationship
+   * @var array
+   */
+  private static $has_one = [
+    'ForumPage' => ForumPage::class,
+  ];
+
+  /**
    * Defines summary fields commonly used in table columns
    * as a quick overview of the data for this dataobject
    * @var array
@@ -55,6 +67,27 @@ class ForumSubmission extends DataObject
     'Email',
     'PhoneNumber'
   ];
+
+  /**
+   * CMS Fields
+   * @return FieldList
+   */
+  public function getCMSFields()
+  {
+    $fields = parent::getCMSFields();
+    $fields->addFieldsToTab('Root.Main',[
+          TextField::create('Name','Name'),
+          TextField::create('Email','Email'),
+          TextField::create('PhoneNumber','Phone Number'),
+          TextareaField::create('Summary', 'Summary'),
+          DropdownField::create('ForumPageID', 'Forum Page',
+          ForumPage::get()
+          ->filter(['CloseDate:GreaterThanOrEqual' => Date('Y-m-d h:m:s')])
+          ->map('ID','Title')),
+          CheckboxField::create('Approved')
+    ]);
+    return $fields;
+  }
 
   public function validate()
   {
