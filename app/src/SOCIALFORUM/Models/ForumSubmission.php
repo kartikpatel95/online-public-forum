@@ -3,6 +3,7 @@
 namespace SOCIALFORUM;
 
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\ValidationResult;
 
 /**
  * Description
@@ -50,4 +51,48 @@ class ForumSubmission extends DataObject
     'PhoneNumber' => 'Phone Number',
     'Summary'
   ];
+
+  public function validate()
+  {
+    $result = parent::validate();
+    try {
+      $this->validation($result);
+    }catch(\Exception $exc) {
+      $result->addError($exc->getMessage());
+    }
+    return $result;
+  }
+
+  public function validation(ValidationResult $result)
+  {
+    $this->getTrimValues();
+    if(strlen($this->Name) <= 0){
+      $result->addFieldError('Name', 'Name is required!');
+    }
+    if(strlen($this->Email) <= 0){
+      $result->addFieldError('Email', 'Email is required!');
+    }
+    if(strlen($this->PhoneNumber) <= 0){
+      $result->addFieldError('PhoneNumber', 'Phone number is required!');
+    }
+    if(strlen($this->Summary) <= 0){
+      $result->addFieldError('Summary', 'Summary is required!');
+    }
+  }
+
+  /**
+   * Event handler called before writing to the database.
+   */
+  public function onBeforeWrite()
+  {
+    parent::onBeforeWrite();
+    $this->getTrimValues();
+  }
+  public function getTrimValues()
+  {
+    $this->Name = trim($this->Name);
+    $this->Email = trim($this->Email);
+    $this->PhoneNumber = trim($this->PhoneNumber);
+    $this->Summary = trim($this->Summary);
+  }
 }
