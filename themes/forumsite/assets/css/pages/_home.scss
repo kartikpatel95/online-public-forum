@@ -5,4 +5,19 @@
   .content-wrapper {
     background-color:#151719;
   }
+
+  .campaigns {
+    padding: 15px 25px;
+    box-shadow: 10px 10px 6px #eee;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.13);
+
+    .cpation-heading {
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 0;
+      color: #00446f;
+    }
+  }
 }

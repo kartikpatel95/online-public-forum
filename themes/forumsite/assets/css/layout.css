@@ -111,6 +111,11 @@ footer {
   color: #fff;
 }
 
+.no-banner {
+  padding-top: 100px;
+  background-color: black;
+}
+
 .home h1,
 .home h2,
 .home h3,
@@ -123,5 +128,20 @@ footer {
 
 .home .content-wrapper {
   background-color: #151719;
+}
+
+.home .campaigns {
+  padding: 15px 25px;
+  box-shadow: 10px 10px 6px #eee;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
+.home .campaigns .cpation-heading {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 0;
+  color: #00446f;
 }
 
