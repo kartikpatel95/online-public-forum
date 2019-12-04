@@ -4,10 +4,10 @@
 
 .campaigns {
   padding: 15px 25px;
-  box-shadow: 10px 10px 6px #eee;
+  box-shadow: 10px 10px 6px #c1baba;
   border-radius: 10px;
-  background-color: rgba(0,0,0,0.13);
-  margin: 0 5px;
+  background-color: rgba(222,226,230,0.71);
+  margin: 0 15px;
 
   .cpation-heading {
     font-size: 18px;
@@ -17,8 +17,16 @@
     color: #00446f;
   }
 
-  img.tile-images {
+  img{
+    &.tile-images {
     width: 300px;
     height: 200px;
+    }
+  }
+
+  .open-close {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
   }
 }

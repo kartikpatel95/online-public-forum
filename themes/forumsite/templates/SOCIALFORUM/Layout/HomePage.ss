@@ -21,6 +21,9 @@
                 <div class="cpation-heading">
                   $TileCaption
                 </div>
+                <div class="open-close">
+                  Put if open or close here based on fourms
+                </div>
               </a>
             </div>
           <% end_loop %>

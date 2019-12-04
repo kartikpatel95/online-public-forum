@@ -20,6 +20,12 @@
                 <div class="cpation-heading">
                   $Caption
                 </div>
+                <div class="open-close">
+                  Put if Number of submissions here
+                </div>
+                <div class="text-center">
+                  closed text here
+                </div>
               </a>
             </div>
           <% end_loop %>
