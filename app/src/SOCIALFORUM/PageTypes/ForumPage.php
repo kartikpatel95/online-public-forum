@@ -83,4 +83,18 @@ class ForumPage extends \Page
       'Teaser', 'Caption', 'OpenDate', 'CloseDate'
     ]);
   }
+
+  /**
+  * Gets text for tile based on close date
+  */
+  public function getOpenClosedStatus()
+  {
+    $result = null;
+    if($this->dbObject('CloseDate') < Date('Y-m-d h:m:s')) {
+      $result = "Closed";
+    } else {
+      $result = "Open";
+    }
+    return $result;
+  }
 }

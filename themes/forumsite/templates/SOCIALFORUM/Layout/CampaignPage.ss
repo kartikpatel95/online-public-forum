@@ -23,8 +23,8 @@
                 <div class="open-close">
                   Put if Number of submissions here
                 </div>
-                <div class="text-center">
-                  closed text here
+                <div class="text-center pt-2">
+                  $OpenClosedStatus
                 </div>
               </a>
             </div>
