@@ -91,9 +91,9 @@ class ForumPage extends \Page
   {
     $result = null;
     if($this->dbObject('CloseDate') < Date('Y-m-d h:m:s')) {
-      $result = "Closed";
+      $result = "Submissions Closed";
     } else {
-      $result = "Open";
+      $result = "Submissions Open";
     }
     return $result;
   }
