@@ -2,22 +2,22 @@
 
 namespace SOCIALFORUM;
 
+use SilverStripe\Dev\Debug;
 /**
  * Description
  *
  * @package silverstripe
  * @subpackage mysite
  */
-class Controller extends \PageController
+class ForumPageController extends \PageController
 {
 
   /**
   * Gets the the approved submissions
   */
-  public function getForumSubmissions() {
+  public function getSubmissions() {
     $submissions = ForumSubmission::get()
-      ->filter(['ForumPageID' => $this->ID])
-      ->sort('CreatedDate', 'ASC');
+    ->filter(['ForumPageID' => $this->ID, 'Approved' => 1]);
     return $submissions;
   }
 }
