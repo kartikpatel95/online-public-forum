@@ -33,7 +33,7 @@ class NonApprovedSubmissions extends BuildTask {
         if($members){
             if($submissions && count($submissions) > 0) {
                 $approve = ArrayList::create();
-                $count = 0;
+                $count = 1;
                 foreach ($submissions as $sub) {
                     $approve->push(new ArrayData([
                         'Number' => $count,
@@ -59,7 +59,8 @@ class NonApprovedSubmissions extends BuildTask {
                         ->setSubject('Non-Approved Forum Submissions')
                         ->setData([
                             'message' => 'The following submissions need to be approved to display on the website',
-                            'data' => $approve
+                            'data' => $approve,
+                            'TotalMessage' => count($approve) <= 1  ? 'There is ' . count($approve) .' submission that needs to be approved' : 'There are ' . count($approve) . ' submissions that need to be approved'
                         ])
                         ->setHTMLTemplate('SOCIALFORUM\\Emails\\NonApprovedSubmissions')
                         ->send();

@@ -115,11 +115,11 @@
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="font-size: 24px;">Hi,</p>
-                        <p>Here is a list of submissions that need to be approved</p>
+                        <p style="font-size: 24px;">Hi, there</p>
+                        <p>$TotalMessage</p>
                         <% loop $data %>
-                            $SubName
-                        <% end_if %>
+                            $Number: $SubName - <strong>Page: $FormName</strong>
+                        <% end_loop %>
                     </td>
                 </tr>
                 <!-- BULLETPROOF BUTTON -->
