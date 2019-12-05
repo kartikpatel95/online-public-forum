@@ -38,12 +38,25 @@ class ApprovedSubmissionsAdmin extends ModelAdmin
    */
   private static $menu_icon_class = 'font-icon-comment';
 
+/**
+ * @param Int $id
+ * @param FieldList $fields
+ * @return Form
+ */
+public function getEditForm($id = null, $fields = null)
+{
+  $form = parent::getEditForm($id, $fields);
+  return $form;
+}
 
   /**
   * returns a approved data to be displayed in admin
   */
   public function getList(){
-    $submissions = ForumSubmission::get()->filter(['Approved' => 1]);
-    return $submissions;
+    $list = parent::getList();
+    if($this->modelClass == 'SOCIALFORUM\ForumSubmission'){
+      $list = ForumSubmission::get()->filter(['Approved' => 1]);
+    }
+    return $list;
   }
 }
