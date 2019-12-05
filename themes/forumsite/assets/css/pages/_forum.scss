@@ -1,0 +1,17 @@
+.forum-page {
+  background-color: $content-background;
+  .grid-item {
+    width: 200px;
+    // background-color:
+  }
+  .grid-item--width2 {
+    width: 400px;
+  }
+
+  .name {
+    font-weight: 700;
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+}

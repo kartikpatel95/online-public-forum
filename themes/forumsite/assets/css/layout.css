@@ -116,6 +116,10 @@ footer {
   background-color: black;
 }
 
+.home {
+  background-color: #fff;
+}
+
 .home h1,
 .home h2,
 .home h3,
@@ -157,6 +161,10 @@ footer {
   text-align: center;
 }
 
+.campaign {
+  background-color: #fff;
+}
+
 .campaign h1,
 .campaign h2,
 .campaign h3,
@@ -165,5 +173,24 @@ footer {
 .campaign h6,
 .campaign p {
   color: #fff;
+}
+
+.forum-page {
+  background-color: #fff;
+}
+
+.forum-page .grid-item {
+  width: 200px;
+}
+
+.forum-page .grid-item--width2 {
+  width: 400px;
+}
+
+.forum-page .name {
+  font-weight: 700;
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 10px;
 }
 
