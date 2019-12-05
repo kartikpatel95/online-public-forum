@@ -2,6 +2,7 @@
 
 namespace SOCIALFORUM;
 
+use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TextareaField;
@@ -55,7 +56,8 @@ class ForumSubmission extends DataObject
     'Name',
     'Email',
     'PhoneNumber' => 'Phone Number',
-    'Summary'
+    'Summary',
+    'ForumPage.Title' => 'Forum Pages'
   ];
 
   /**
@@ -65,7 +67,12 @@ class ForumSubmission extends DataObject
   private static $searchable_fields = [
     'Name',
     'Email',
-    'PhoneNumber'
+    'PhoneNumber',
+    'ForumPage.Title' => [
+      'title' => 'Forum Page Title',
+      'field' => TextField::class,
+      'filter' => 'PartialMatchFilter'
+    ]
   ];
 
   /**
