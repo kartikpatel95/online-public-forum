@@ -16,7 +16,8 @@ class ForumPageController extends \PageController
   */
   public function getSubmissions() {
     $submissions = ForumSubmission::get()
-    ->filter(['ForumPageID' => $this->ID, 'Approved' => 1]);
+    ->filter(['ForumPageID' => $this->ID, 'Approved' => 1])
+    ->sort('Created', 'ASC');
     return $submissions;
   }
 }

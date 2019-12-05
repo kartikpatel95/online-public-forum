@@ -198,14 +198,20 @@ footer {
 
 .forum-page .grid-item {
   width: 200px;
-  padding: 10px;
   background: #f8f8f8;
   border: 3px solid;
   border-radius: 10px;
+  float: left;
+  margin-bottom: 10px;
 }
 
-.forum-page .grid-item--width2 {
-  width: 400px;
+.forum-page .forum-text {
+  color: #00446f;
+  text-align: center;
+  font-size: 22px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  font-weight: 400;
 }
 
 .forum-page .name {
@@ -213,5 +219,9 @@ footer {
   text-align: center;
   font-size: 22px;
   padding-bottom: 10px;
+}
+
+.forum-page .submission-content-wrapper {
+  padding: 10px;
 }
 

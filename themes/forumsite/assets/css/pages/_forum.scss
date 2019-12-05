@@ -2,13 +2,21 @@
   background-color: $content-background;
   .grid-item {
     width: 200px;
-    padding: 10px;
     background: #f8f8f8;
     border: 3px solid;
     border-radius: 10px;
+    float: left;
+    margin-bottom: 10px;
   }
-  .grid-item--width2 {
-    width: 400px;
+
+
+  .forum-text {
+    color: $text-color;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-weight: 400;
   }
 
   .name {
@@ -16,5 +24,9 @@
     text-align: center;
     font-size: 22px;
     padding-bottom: 10px;
+  }
+
+  .submission-content-wrapper {
+    padding: 10px;
   }
 }
