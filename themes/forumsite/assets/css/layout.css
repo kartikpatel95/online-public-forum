@@ -50,12 +50,12 @@ footer {
 }
 
 .footer .footer-wrapper {
-  background-color: #4c545e;
+  background-color: #1e1a1a;
   padding: 10px 0 25px 0;
 }
 
 .footer .footer-tagline {
-  background-color: #353b41;
+  background-color: #222427;
 }
 
 .footer .footer-headings {
@@ -180,7 +180,11 @@ footer {
 }
 
 .forum-page .grid-item {
-  width: 200px;
+  width: 250px;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 3px solid;
+  border-radius: 10px;
 }
 
 .forum-page .grid-item--width2 {

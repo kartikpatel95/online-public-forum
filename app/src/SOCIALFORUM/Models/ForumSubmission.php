@@ -83,9 +83,8 @@ class ForumSubmission extends DataObject
           DropdownField::create('ForumPageID', 'Forum Page',
           ForumPage::get()
           ->filter(['CloseDate:GreaterThanOrEqual' => Date('Y-m-d h:m:s')])
-          ->map('ID','Title')),
-          CheckboxField::create('Approved')
-    ]);
+          ->map('ID','Title'))
+        ]);
     return $fields;
   }
 
