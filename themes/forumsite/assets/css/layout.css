@@ -130,6 +130,19 @@ footer {
   color: #fff;
 }
 
+.home .open-close {
+  color: #00446f;
+}
+
+.home .campaign-text {
+  color: #00446f;
+  text-align: center;
+  font-size: 22px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
 .content-wrapper {
   background-color: #151719;
 }
@@ -175,12 +188,16 @@ footer {
   color: #fff;
 }
 
+.campaign .open-close {
+  color: #00446f;
+}
+
 .forum-page {
   background-color: #fff;
 }
 
 .forum-page .grid-item {
-  width: 250px;
+  width: 200px;
   padding: 10px;
   background: #f8f8f8;
   border: 3px solid;

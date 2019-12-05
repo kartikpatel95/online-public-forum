@@ -109,4 +109,11 @@ class ForumPage extends \Page
     }
     return $result;
   }
+
+  public function getSubmissionCount()
+  {
+    $submissions = ForumSubmission::get()
+      ->filter(['ForumPageID' => $this->ID, 'Approved' => 1]);
+    return count($submissions);
+  }
 }

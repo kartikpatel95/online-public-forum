@@ -2,7 +2,6 @@
 
 namespace SOCIALFORUM;
 
-use SilverStripe\Dev\Debug;
 class HomePageController extends \PageController
 {
   /**

@@ -10,8 +10,11 @@
   <% end_if %>
 
   <div class="container py-3">
-    <div class="d-flex justify-content-center">
       <% if $Campaigns %>
+        <div class="campaign-text">
+          Get involved...
+        </div>
+        <div class="d-flex justify-content-center">
           <% loop $Campaigns %>
             <div class="campaigns">
               <a href="$Link">
@@ -27,7 +30,11 @@
               </a>
             </div>
           <% end_loop %>
+        </div>
+      <% else %>
+        <div class="campaign-text">
+          There are no campaigns
+        </div>
       <% end_if %>
     </div>
-  </div>
 </div>

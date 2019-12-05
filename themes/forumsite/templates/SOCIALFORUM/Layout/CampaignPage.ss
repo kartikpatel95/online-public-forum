@@ -21,7 +21,7 @@
                   $Caption
                 </div>
                 <div class="open-close">
-                  Put if Number of submissions here
+                  Submissions: $SubmissionCount
                 </div>
                 <div class="text-center pt-2">
                   $OpenClosedStatus
