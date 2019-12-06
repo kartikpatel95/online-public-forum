@@ -22,8 +22,17 @@
                 <div class="col-md-6">
                     <div>
                         <h3 class="form-content-heading">Latest Submission</h3>
-                        <% loop $getLastSubmission %>
-                            <% include SubmissionData %>
+                        <% loop $LastSubmission %>
+                            <div class="w-100 submission-content latest-submission">
+                                <div class="submission-content-wrapper">
+                                    <div class="name">
+                                        $Name
+                                    </div>
+                                    <div>
+                                        $Summary.LimitWordCount(350)
+                                    </div>
+                                </div>
+                            </div>
                         <% end_loop %>
                     </div>
                 </div>

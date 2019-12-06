@@ -11,7 +11,7 @@ function SubmissionForm() {
     const [postMessage, setPostMessage] = useState(null);
 
     const handleSubmit = (values) => {
-        const url = `/api/forum/submission/save/2`;
+        const url = `/api/forum/submission/save/7`;
         return fetch(url, {
             method: 'POST',
             headers: {
@@ -22,9 +22,9 @@ function SubmissionForm() {
         }).then((res) => res.json())
             .then((result) => {
                if(result.success){
-
+                    setPostMessage(result.message);
                }else{
-
+                   setError(result.message);
                }
             }).catch((err) => setError(err.message()))
     };
@@ -34,14 +34,17 @@ function SubmissionForm() {
             <h3 className="form-content-heading">Make Your Submission</h3>
             <Formik
                 initialValues={{...initial}}
-                onSubmit={(values, {setSubmitting}) => {
+                onSubmit={(values, {setSubmitting, resetForm}) => {
                     handleSubmit(values)
-                        .finally(() => setSubmitting(false))
+                        .finally(() => {
+                            resetForm({...initial});
+                            setSubmitting(false);
+                        })
                 }}
                 validationSchema={SubmissionValidation}
             >{({values, handleChange, onChange, errors, handleSubmit, handleBlur, touched, isSubmitting}) => (
                 <Form onSubmit={handleSubmit}>
-                    <Form.Label className="form-label-heading">Name</Form.Label>
+                    <Form.Label className="form-label-heading" column={false}>Name</Form.Label>
                     <InputGroup>
                         <Form.Control
                             name="Name"
@@ -54,7 +57,7 @@ function SubmissionForm() {
                         {errors && (<FormikFormError error={errors.Name} />)}
                     </InputGroup>
 
-                    <Form.Label className="form-label-heading">Email Address</Form.Label>
+                    <Form.Label className="form-label-heading" column={false}>Email Address</Form.Label>
                     <InputGroup>
                         <Form.Control
                             name="Email"
@@ -67,7 +70,7 @@ function SubmissionForm() {
                         {errors.Email && (<FormikFormError error={errors.Email} />)}
                     </InputGroup>
 
-                    <Form.Label className="form-label-heading">Phone Number</Form.Label>
+                    <Form.Label className="form-label-heading" column={false}>Phone Number</Form.Label>
                     <InputGroup>
                         <Form.Control
                             name="PhoneNumber"
@@ -80,7 +83,7 @@ function SubmissionForm() {
                         {errors.PhoneNumber && (<FormikFormError error={errors.PhoneNumber} />)}
                     </InputGroup>
 
-                    <Form.Label className="form-label-heading">Submission Summary</Form.Label>
+                    <Form.Label className="form-label-heading" column={false}>Submission Summary</Form.Label>
                     <InputGroup>
                         <Form.Control
                             as="textarea"
@@ -95,7 +98,9 @@ function SubmissionForm() {
                         {errors.Summary && (<FormikFormError error={errors.Summary} />)}
                     </InputGroup>
 
+                    {postMessage && (<Alert variant="success" className="mt-2">{postMessage}</Alert>)}
                     {Error && (<Alert variant="danger">{Error}</Alert>)}
+
                     <Button variant="primary" type="submit" className="mt-2" disabled={isSubmitting} block>
                         Submit</Button>
                 </Form>

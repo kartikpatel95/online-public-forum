@@ -77,7 +77,6 @@ class ForumSubmission extends DataObject
 
   /**
    * CMS Fields
-   * @return FieldList
    */
   public function getCMSFields()
   {
@@ -95,6 +94,9 @@ class ForumSubmission extends DataObject
     return $fields;
   }
 
+    /**
+     * @return ValidationResult
+     */
   public function validate()
   {
     $result = parent::validate();
@@ -106,6 +108,9 @@ class ForumSubmission extends DataObject
     return $result;
   }
 
+    /**
+     * @param ValidationResult $result
+     */
   public function validation(ValidationResult $result)
   {
     $this->getTrimValues();

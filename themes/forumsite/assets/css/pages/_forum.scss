@@ -2,11 +2,18 @@
   background-color: $content-background;
   .grid-item {
     width: 200px;
+    float: left;
+  }
+
+  .submission-content {
     background: #f8f8f8;
     border: 3px solid;
     border-radius: 0 0 30px 0;
-    float: left;
     margin-bottom: 10px;
+  }
+
+  .latest-submission {
+    margin-top: 45px;
   }
 
 

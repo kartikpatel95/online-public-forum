@@ -1,4 +1,4 @@
-<div class="grid-item">
+<div class="grid-item submission-content">
     <div class="submission-content-wrapper">
         <div class="name">
             $Name
