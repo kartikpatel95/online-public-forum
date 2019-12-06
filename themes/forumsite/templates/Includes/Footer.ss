@@ -5,12 +5,14 @@
             <% with $SiteConfig %>
               <% if $Social %>
                   <div class="col-md-4">
-                      <div class="footer-headings">
+                      <div class="footer-headings text-md-left">
                         Social Media
                       </div>
-                      <div class="text-center">
+                      <div class="text-center text-md-left">
                         <% loop $Social.Sort('SortID') %>
-                            <a href="$SocialLink.LinkURL" {$SocialLink.TargetAttr}><i class="$Icon social-icon"></i></a>
+                            <a href="$SocialLink.LinkURL" {$SocialLink.TargetAttr}>
+                                <i class="$Icon social-icon"></i>
+                            </a>
                         <% end_loop %>
                       </div>
                   </div>
