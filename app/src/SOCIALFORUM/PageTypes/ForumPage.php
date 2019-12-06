@@ -129,6 +129,10 @@ class ForumPage extends \Page
         return $submissionGrid;
     }
 
+    /**
+     * Return the last submission that was submitted
+     * @return \SilverStripe\ORM\DataObject
+     */
     public function getLastSubmission(){
         $submissions = ForumSubmission::get()
             ->filter(['ForumPageID' => $this->ID, 'Approved' => 1])

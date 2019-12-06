@@ -76,9 +76,9 @@ footer {
 }
 
 .banner {
+  min-height: 450px;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 350px;
 }
 
 .banner .banner-content-wrapper {
@@ -140,7 +140,7 @@ footer {
   font-size: 22px;
   padding: 10px 0;
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .content-wrapper {
@@ -200,7 +200,7 @@ footer {
   width: 200px;
   background: #f8f8f8;
   border: 3px solid;
-  border-radius: 10px;
+  border-radius: 0 0 30px 0;
   float: left;
   margin-bottom: 10px;
 }
@@ -211,7 +211,7 @@ footer {
   font-size: 22px;
   padding: 10px 0;
   margin-bottom: 10px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .forum-page .name {
@@ -223,5 +223,14 @@ footer {
 
 .forum-page .submission-content-wrapper {
   padding: 10px;
+}
+
+.forum-page .form-wrapper {
+  background-color: #222427;
+  padding: 10px 0;
+}
+
+.forum-page .form-wrapper .form-content-heading {
+  color: #fff;
 }
 

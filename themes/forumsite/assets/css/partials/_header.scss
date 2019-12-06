@@ -1,11 +1,12 @@
 .banner {
+  min-height: 450px;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 350px;
 
 .banner-content-wrapper {
     min-height: inherit;
-    .banner-content {
+
+  .banner-content {
       padding: 30px 20px;
       text-shadow: 2px 2px black;
     }

@@ -30,8 +30,8 @@ function SubmissionForm() {
     };
 
     return (
-        <React.Fragment>
-            <h3>Make Your Submission</h3>
+        <div className="submission-form">
+            <h3 className="form-content-heading">Make Your Submission</h3>
             <Formik
                 initialValues={{...initial}}
                 onSubmit={(values, {setSubmitting}) => {
@@ -101,7 +101,7 @@ function SubmissionForm() {
                 </Form>
             )}
             </Formik>
-        </React.Fragment>
+        </div>
     )
 }
 
