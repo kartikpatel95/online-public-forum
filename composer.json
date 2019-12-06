@@ -24,10 +24,10 @@
         "deployer/deployer": "^6.6",
         "lekoala/silverstripe-debugbar": "^2.0"
     },
-    "autoload" : {
-      "psr-4": {
-          "SOCIALFORUM\\": "app/src/SOCIALFORUM"
-      }
+    "autoload": {
+        "psr-4": {
+            "SOCIALFORUM\\": "app/src/SOCIALFORUM"
+        }
     },
     "extra": {
         "resources-dir": "_resources",

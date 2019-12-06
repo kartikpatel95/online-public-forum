@@ -96,6 +96,7 @@ function SubmissionForm(props) {
                             onBlur={handleBlur}
                             isValid={touched.Summary && !errors.Summary}
                             isInvalid={!!errors.Summary}
+                            className="summary-text-area"
                         />
                         {errors.Summary && (<FormikFormError error={errors.Summary} />)}
                     </InputGroup>
