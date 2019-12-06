@@ -1,7 +1,7 @@
 .banner {
   min-height: 450px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 
 .banner-content-wrapper {
     min-height: inherit;
