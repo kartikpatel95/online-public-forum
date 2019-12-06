@@ -24,7 +24,7 @@ const config = {
 mix.sass(config.scss.src, config.scss.dest).sourceMaps()
     .copy(config.vendor.cssPaths, 'assets/css/vendor')
     .copy(config.vendor.jsPaths, 'assets/javascript/vendor')
-    .react('src/index.js', 'assets/javascript/index')
+    .react('src/index.js', 'assets/javascript/forum')
     .browserSync({
         open: "external",
         proxy: "publicforum.vcap.me",

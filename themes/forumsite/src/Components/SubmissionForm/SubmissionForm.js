@@ -5,13 +5,15 @@ import './SubmissionForm.scss';
 import {SubmissionValidation} from "./SubmissionValidation";
 import {FormikFormError} from "../Partials/FormikFormError";
 
-function SubmissionForm() {
+function SubmissionForm(props) {
     const initial = {Name:'', Email: '', PhoneNumber: '', Summary: ''};
     const [Error, setError] = useState(null);
     const [postMessage, setPostMessage] = useState(null);
 
+    const {page} = props;
+    const url = page ? `/api/forum/submission/save/${page}` : '';
+
     const handleSubmit = (values) => {
-        const url = `/api/forum/submission/save/7`;
         return fetch(url, {
             method: 'POST',
             headers: {

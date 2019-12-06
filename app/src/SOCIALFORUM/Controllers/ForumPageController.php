@@ -3,7 +3,6 @@
 namespace SOCIALFORUM;
 
 use SilverStripe\Control\HTTPRequest;
-use SilverStripe\Dev\Debug;
 use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 
@@ -20,21 +19,20 @@ class ForumPageController extends \PageController
      * @var array
      */
     private static $allowed_actions = [
-        'SaveSubmission', 'GetPageInfo'
+        'SaveSubmission'
     ];
 
     /**
      * @var array
      */
     private static $url_handlers = [
-        'save/$forumID!' => 'SaveSubmission',
-        'get' => 'GetPageInfo'
+        'save/$forumID!' => 'SaveSubmission'
     ];
 
     protected function init()
     {
         parent::init();
-        Requirements::themedJavascript('assets/javascript/index/index.js');
+        Requirements::themedJavascript('assets/javascript/forum/index');
     }
 
     /**
@@ -74,26 +72,6 @@ class ForumPageController extends \PageController
             }
         }else{
             $response->message = "Forum page with id: " . $forumPage . ' does not exist';
-        }
-        return $this->getResponse()
-            ->addHeader('Content-type', 'application/json')
-            ->setBody(json_encode($response));
-    }
-
-    /**
-     * Gets the current page information
-     * @return \SilverStripe\Control\HTTPResponse
-     */
-    public function getPageInfo(){
-        $response = (object)['success' => false, 'message' => null, 'data' => null];
-        Debug::dump($this->getCurrentForumPage());
-        die();
-//        $page = ForumPage::get()->byID($this->ID);
-        if($page){
-            $response->success = true;
-            $response->data = $page;
-        }else{
-            $response->message = 'Cannot find Forum Page';
         }
         return $this->getResponse()
             ->addHeader('Content-type', 'application/json')
