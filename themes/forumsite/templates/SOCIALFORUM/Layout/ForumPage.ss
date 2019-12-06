@@ -4,15 +4,20 @@
       <div class="forum-text">
         Entries
       </div>
-      <div class="row pb-4">
+      <div class="row mb-4">
       	<div class="col-md-6">
       		<div id="submission-form">
-      			Form goes here
-      		</div>
+                <div class="alert alert-danger">
+                    There seems to be an error loading the submission form. Please contact the admin.
+                </div>
+            </div>
       	</div>
       	<div class="col-md-6">
       		<div>
-      			Last Submission will go here
+                <h3>Latest Submission</h3>
+                <% loop $getLastSubmission %>
+                    <% include SubmissionData %>
+                <% end_loop %>
       		</div>
       	</div>
       </div>

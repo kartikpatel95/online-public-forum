@@ -4,7 +4,6 @@ import {Form} from 'react-bootstrap';
 export function FormikFormError(props) {
     const {error} = props;
     return (
-        <Form.Control.FeedBack type="invalid">
-            {error}</Form.Control.FeedBack>
+        <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
     )
 }

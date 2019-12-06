@@ -128,4 +128,11 @@ class ForumPage extends \Page
         $submissionGrid->getConfig()->removeComponentsByType(GridFieldAddNewButton::class);
         return $submissionGrid;
     }
+
+    public function getLastSubmission(){
+        $submissions = ForumSubmission::get()
+            ->filter(['ForumPageID' => $this->ID, 'Approved' => 1])
+            ->last();
+        return $submissions;
+    }
 }

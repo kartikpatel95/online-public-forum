@@ -6,11 +6,14 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.7.4",
     "bootstrap": "^4.4.1",
     "formik": "^2.0.6",
     "jquery": "^3.4.1",
     "masonry-layout": "^4.2.2",
+    "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
     "yup": "^0.27.0"
   },
   "devDependencies": {
@@ -29,5 +32,6 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "yarn run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  }
+  },
+  "proxy": "http://publicforum.vcap.me"
 }
