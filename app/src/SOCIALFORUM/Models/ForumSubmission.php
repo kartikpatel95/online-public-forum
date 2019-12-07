@@ -2,8 +2,6 @@
 
 namespace SOCIALFORUM;
 
-use SilverStripe\Forms\NumericField;
-use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
@@ -81,6 +79,7 @@ class ForumSubmission extends DataObject
   public function getCMSFields()
   {
     $fields = parent::getCMSFields();
+
     $fields->addFieldsToTab('Root.Main',[
           TextField::create('Name','Name'),
           TextField::create('Email','Email'),
@@ -133,9 +132,13 @@ class ForumSubmission extends DataObject
    */
   public function onBeforeWrite()
   {
-    parent::onBeforeWrite();
     $this->getTrimValues();
+    return parent::onBeforeWrite();
   }
+
+    /**
+     * Trim database fields
+     */
   public function getTrimValues()
   {
     $this->Name = trim($this->Name);
