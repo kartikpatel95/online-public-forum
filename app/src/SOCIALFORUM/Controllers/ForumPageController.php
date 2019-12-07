@@ -19,14 +19,15 @@ class ForumPageController extends \PageController
      * @var array
      */
     private static $allowed_actions = [
-        'SaveSubmission'
+        'SaveSubmission', 'CurrentPageInfo'
     ];
 
     /**
      * @var array
      */
     private static $url_handlers = [
-        'save/$forumID!' => 'SaveSubmission'
+        'save/$forumID!' => 'SaveSubmission',
+        'get/$forumID!' => 'CurrentPageInfo'
     ];
 
     protected function init()
@@ -72,6 +73,26 @@ class ForumPageController extends \PageController
             }
         }else{
             $response->message = "Forum page with id: " . $forumPage . ' does not exist';
+        }
+        return $this->getResponse()
+            ->addHeader('Content-type', 'application/json')
+            ->setBody(json_encode($response));
+    }
+
+    /**
+     * @param HTTPRequest $request
+     * @return \SilverStripe\Control\HTTPResponse
+     */
+    public function CurrentPageInfo(HTTPRequest $request){
+        $response = (object)['success' => false, 'message' => null, 'data' => null];
+        $pageID = $request->param('forumID');
+        if($pageID){
+            $model = ForumPage::get()->byID($pageID);
+            $response->success = true;
+            $response->message = 'Successfully retrieved page ' . $model->Title;
+            $response->data = $model->toMap();
+        }else{
+            $response->message = 'There was a error with id: ' . $pageID;
         }
         return $this->getResponse()
             ->addHeader('Content-type', 'application/json')

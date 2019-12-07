@@ -4,14 +4,16 @@ import {Formik} from "formik";
 import './SubmissionForm.scss';
 import {SubmissionValidation} from "./SubmissionValidation";
 import {FormikFormError} from "../Partials/FormikFormError";
+import moment from 'moment';
 
 function SubmissionForm(props) {
     const initial = {Name:'', Email: '', PhoneNumber: '', Summary: ''};
     const [Error, setError] = useState(null);
     const [postMessage, setPostMessage] = useState(null);
-
-    const {page} = props;
+    const {page, info} = props;
     const url = page ? `/api/forum/submission/save/${page}` : '';
+
+    const submissionOpen = info && moment(info.CloseDate).unix() >  moment().unix();
 
     const handleSubmit = (values) => {
         return fetch(url, {
@@ -30,10 +32,11 @@ function SubmissionForm(props) {
                }
             }).catch((err) => setError(err.message()))
     };
-
     return (
         <div className="submission-form">
-            <h3 className="form-content-heading">Make Your Submission</h3>
+            <h3 className="form-content-heading">
+                {submissionOpen ? 'Make Your Submission' : 'Submissions are closed'}
+            </h3>
             <Formik
                 initialValues={{...initial}}
                 onSubmit={(values, {setSubmitting, resetForm}) => {
@@ -55,6 +58,8 @@ function SubmissionForm(props) {
                             onBlur={handleBlur}
                             isValid={touched.Name && !errors.Name}
                             isInvalid={!!errors.Name}
+                            disabled={!submissionOpen}
+                            className={submissionOpen ? 'submission-open' : 'submission-close'}
                         />
                         {errors && (<FormikFormError error={errors.Name} />)}
                     </InputGroup>
@@ -68,6 +73,8 @@ function SubmissionForm(props) {
                             onBlur={handleBlur}
                             isValid={touched.Email && !errors.Email}
                             isInvalid={!!errors.Email}
+                            disabled={!submissionOpen}
+                            className={submissionOpen ? 'submission-open' : 'submission-close'}
                         />
                         {errors.Email && (<FormikFormError error={errors.Email} />)}
                     </InputGroup>
@@ -81,6 +88,8 @@ function SubmissionForm(props) {
                             onBlur={handleBlur}
                             isValid={touched.PhoneNumber && !errors.PhoneNumber}
                             isInvalid={!!errors.PhoneNumber}
+                            disabled={!submissionOpen}
+                            className={submissionOpen ? 'submission-open' : 'submission-close'}
                         />
                         {errors.PhoneNumber && (<FormikFormError error={errors.PhoneNumber} />)}
                     </InputGroup>
@@ -96,7 +105,8 @@ function SubmissionForm(props) {
                             onBlur={handleBlur}
                             isValid={touched.Summary && !errors.Summary}
                             isInvalid={!!errors.Summary}
-                            className="summary-text-area"
+                            disabled={!submissionOpen}
+                            className={submissionOpen ? 'submission-open summary-text-area' : 'submission-close summary-text-area'}
                         />
                         {errors.Summary && (<FormikFormError error={errors.Summary} />)}
                     </InputGroup>
@@ -104,7 +114,7 @@ function SubmissionForm(props) {
                     {postMessage && (<Alert variant="success" className="mt-2">{postMessage}</Alert>)}
                     {Error && (<Alert variant="danger">{Error}</Alert>)}
 
-                    <Button variant="primary" type="submit" className="mt-2" disabled={isSubmitting} block>
+                    <Button variant="primary" type="submit" className="mt-2" disabled={!submissionOpen || isSubmitting} block>
                         Submit</Button>
                 </Form>
             )}
