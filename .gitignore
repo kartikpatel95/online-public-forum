@@ -10,3 +10,4 @@ ss.error.log
 .DS_Store
 
 node_modules
+deploy.php

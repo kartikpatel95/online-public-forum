@@ -4,9 +4,15 @@
         <div class="forum-text">
             Entries
         </div>
-        <div class="grid">
-            <% include UserSubmission %>
-        </div>
+        <% if $Submissions %>
+            <div class="grid">
+                <% include UserSubmission %>
+            </div>
+        <% else %>
+            <div class="text-center">
+                <h3>There are no current submissions</h3>
+            </div>
+        <% end_if %>
     </div>
 
     <div class="form-wrapper">
@@ -22,18 +28,30 @@
                 <div class="col-md-6">
                     <div>
                         <h3 class="form-content-heading">Latest Submission</h3>
-                        <% loop $LastSubmission %>
-                            <div class="w-100 submission-content latest-submission">
-                                <div class="submission-content-wrapper">
-                                    <div class="name">
-                                        $Name
+                        <% if $LastSubmission %>
+                            <% loop $LastSubmission %>
+                                <div class="w-100 submission-content latest-submission">
+                                    <div class="submission-content-wrapper">
+                                        <div class="name">
+                                            $Name
+                                        </div>
+                                        <div>
+                                            $Summary.LimitWordCount(350)
+                                        </div>
                                     </div>
-                                    <div>
-                                        $Summary.LimitWordCount(350)
+                                </div>
+                            <% end_loop %>
+                        <% else %>
+                            <div class="text-center">
+                                <div class="w-100 submission-content latest-submission">
+                                    <div class="submission-content-wrapper">
+                                        <div class="name">
+                                            There is no current submissions
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        <% end_loop %>
+                        <% end_if %>
                     </div>
                 </div>
             </div>
