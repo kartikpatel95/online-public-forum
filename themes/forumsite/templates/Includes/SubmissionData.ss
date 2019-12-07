@@ -3,8 +3,14 @@
         <div class="name">
             $Name
         </div>
+
+        <div class="pb-2">
+            <div class="submission-heading">Submitted On:</div>$Created.Format('EEE, d, MMM')
+        </div>
+
         <div>
-            $Summary.LimitWordCount(50)
+            <div class="submission-heading">Summary:</div>
+            $Summary
         </div>
     </div>
 </div>
