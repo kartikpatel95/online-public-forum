@@ -5,6 +5,7 @@ import './SubmissionForm.scss';
 import {SubmissionValidation} from "./SubmissionValidation";
 import {FormikFormError} from "../Partials/FormikFormError";
 import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function SubmissionForm(props) {
     const initial = {Name:'', Email: '', PhoneNumber: '', Summary: ''};
@@ -115,7 +116,7 @@ function SubmissionForm(props) {
                     {Error && (<Alert variant="danger">{Error}</Alert>)}
 
                     <Button variant="primary" type="submit" className="mt-2" disabled={!submissionOpen || isSubmitting} block>
-                        Submit</Button>
+                        Submit {isSubmitting ? <FontAwesomeIcon icon="circle-notch" spin/> : '' } </Button>
                 </Form>
             )}
             </Formik>
