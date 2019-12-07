@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import {SubmissionForm} from "./Components/SubmissionForm/SubmissionForm";
+import {Alert} from "react-bootstrap";
 
 function App() {
 	const [Error, setError] = useState(null);
@@ -24,8 +25,12 @@ function App() {
 		fetchPageInfo();
 	}, [fetchPageInfo]);
 
-	return (
-		<SubmissionForm page={forumPageID} info={PageInfo}/>
-	);
+	if(Error){
+		return (<Alert variant="danger">{Error}</Alert>)
+	}else {
+		return (
+			<SubmissionForm page={forumPageID} info={PageInfo}/>
+		);
+	}
 }
 export default App;
