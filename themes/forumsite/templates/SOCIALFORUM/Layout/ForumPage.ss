@@ -21,7 +21,7 @@
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div id="submission-form" data-page="$ID">
                         <div class="alert alert-danger">
-                            There seems to be an error loading the submission form. Please contact the admin.
+                            Loading Form. If this message remains here after 3-4 mins please contact your admin.
                         </div>
                     </div>
                 </div>
