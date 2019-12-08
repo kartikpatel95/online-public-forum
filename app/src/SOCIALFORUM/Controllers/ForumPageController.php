@@ -58,11 +58,6 @@ class ForumPageController extends \PageController
             $body = json_decode($request->getBody());
             $model = ForumSubmission::create();
             try{
-                if(Security::getCurrentUser()){
-                    $model->Approved = 1;
-                }else{
-                    $model->Approved = 0;
-                }
                 $model->ForumPage = $forumPage;
                 $model->update((array)$body);
                 $model->write();
