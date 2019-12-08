@@ -8,6 +8,15 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\ORM\ValidationResult;
 
+/**
+ * Class ForumSubmission
+ * @package SOCIALFORUM
+ * @property string $Name
+ * @property string $Email
+ * @property string $PhoneNumber
+ * @property string $Summary
+ * @property boolean $Approved
+ */
 class ForumSubmission extends DataObject
 {
   /**

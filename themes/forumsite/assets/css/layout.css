@@ -86,8 +86,14 @@ footer {
 }
 
 .banner .banner-content-wrapper .banner-content {
-  padding: 30px 20px;
+  line-height: 60px;
   text-shadow: 2px 2px black;
+}
+
+@media (min-width: 768px) {
+  .banner .banner-content-wrapper .banner-content {
+    padding: 30px 20px;
+  }
 }
 
 .banner .banner-content-wrapper .header-spacer {
