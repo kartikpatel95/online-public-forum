@@ -214,8 +214,10 @@ footer {
   margin-bottom: 10px;
 }
 
-.forum-page .latest-submission {
-  margin-top: 45px;
+@media (min-width: 768px) {
+  .forum-page .latest-submission {
+    margin-top: 45px;
+  }
 }
 
 .forum-page .forum-text {
@@ -249,5 +251,6 @@ footer {
 
 .forum-page .form-wrapper .form-content-heading {
   color: #fff;
+  font-weight: 700;
 }
 

@@ -18,7 +18,7 @@
     <div class="form-wrapper">
         <div class="container">
             <div class="row mb-4">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <div id="submission-form" data-page="$ID">
                         <div class="alert alert-danger">
                             There seems to be an error loading the submission form. Please contact the admin.

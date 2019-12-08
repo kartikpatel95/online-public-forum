@@ -12,9 +12,12 @@
     margin-bottom: 10px;
   }
 
-  .latest-submission {
-    margin-top: 45px;
+  @media (min-width: 768px) {
+    .latest-submission {
+      margin-top: 45px;
+    }
   }
+
 
 
   .forum-text {
@@ -47,6 +50,7 @@
     
     .form-content-heading {
       color: #fff;
+      font-weight: 700;
     }
   }
 }
