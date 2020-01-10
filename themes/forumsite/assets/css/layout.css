@@ -122,6 +122,18 @@ footer {
   background-color: black;
 }
 
+.header .breadcrumb {
+  position: absolute;
+  right: 16px;
+  font-size: 16px;
+  top: 37px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header .breadcrumb a {
+  padding: 0 6px;
+}
+
 .home {
   background-color: #fff;
 }

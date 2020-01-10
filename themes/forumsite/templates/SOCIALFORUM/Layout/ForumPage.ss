@@ -4,6 +4,7 @@
         <div class="forum-text">
             Entries
         </div>
+        $Breadcrumbs
         <% if $Submissions %>
             <div class="grid">
                 <% include UserSubmission %>
@@ -20,8 +21,8 @@
             <div class="row mb-4">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div id="submission-form" data-page="$ID">
-                        <div class="alert alert-danger">
-                            Loading Form. If this message remains here after 3-4 mins please contact your admin.
+                        <div class="alert alert-info">
+                            Loading Form... If this message remains here after 3-4 mins please contact your admin.
                         </div>
                     </div>
                 </div>
