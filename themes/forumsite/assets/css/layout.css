@@ -122,18 +122,6 @@ footer {
   background-color: black;
 }
 
-.header .breadcrumb {
-  position: absolute;
-  right: 16px;
-  font-size: 16px;
-  top: 37px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.header .breadcrumb a {
-  padding: 0 6px;
-}
-
 .home {
   background-color: #fff;
 }
@@ -190,6 +178,23 @@ footer {
   border: 1px solid #000;
   padding: 10px;
   text-align: center;
+}
+
+.breadcrumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.breadcrumb a {
+  padding: 0 6px;
+}
+
+@media (min-width: 1024px) {
+  .breadcrumb {
+    position: absolute;
+    padding-top: 10px;
+  }
 }
 
 .campaign {

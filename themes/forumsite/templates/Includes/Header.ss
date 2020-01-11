@@ -4,8 +4,4 @@
             <a href="/">$SiteConfig.Logo.ScaleWidth(300)</a>
         </div>
     </div>
-
-    <div class="breadcrumb">
-        $Breadcrumbs
-    </div>
 </div>
