@@ -126,6 +126,7 @@ class ForumPage extends \Page
         $submissionGrid = GridField::create('ForumSubmissions', '',
             $this->getOwner()->ForumSubmissions(), GridFieldConfig_RecordEditor::create());
         $submissionGrid->getConfig()->removeComponentsByType(GridFieldAddNewButton::class);
+
         return $submissionGrid;
     }
 
@@ -137,6 +138,7 @@ class ForumPage extends \Page
         $submissions = ForumSubmission::get()
             ->filter(['ForumPageID' => $this->ID, 'Approved' => 1])
             ->last();
+
         return $submissions;
     }
 }

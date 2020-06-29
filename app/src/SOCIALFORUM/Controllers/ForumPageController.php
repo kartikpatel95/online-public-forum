@@ -3,7 +3,6 @@
 namespace SOCIALFORUM;
 
 use SilverStripe\Control\HTTPRequest;
-use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
 
 /**
