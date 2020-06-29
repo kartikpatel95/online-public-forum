@@ -10,6 +10,9 @@
     <body>
     <header>
         <% include Header %>
+        <% require themedCSS("assets/css/vendor/bootstrap.min") %>
+        <% require themedCSS("assets/css/framework/typography") %>
+        <% require themedCSS("assets/css/layout") %>
     </header>
         <div class="main">
             <div class="typography h-100">
@@ -18,6 +21,10 @@
         </div>
     <footer>
         <% include Footer %>
+        <% require javascript("_resources/themes/forumsite/assets/javascript/vendor/jquery.min.js") %>
+        <% require javascript("_resources/themes/forumsite/assets/javascript/vendor/bootstrap.min.js") %>
+        <% require javascript("_resources/themes/forumsite/assets/javascript/vendor/masonry.pkgd.min.js") %>
+        <% require javascript("_resources/themes/forumsite/assets/javascript/script.js") %>
     </footer>
     </body>
 </html>

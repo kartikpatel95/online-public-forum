@@ -15,14 +15,6 @@ namespace {
         protected function init()
         {
             parent::init();
-            Requirements::themedJavascript('assets/javascript/vendor/jquery.min');
-            Requirements::themedJavascript('assets/javascript/vendor/bootstrap.min');
-            Requirements::themedJavascript('assets/javascript/vendor/masonry.pkgd.min.js');
-            Requirements::themedJavascript('assets/javascript/script.js');
-            Requirements::themedCSS('assets/css/vendor/bootstrap.min.css');
-            Requirements::themedCSS('assets/css/framework/typography');
-            Requirements::themedCSS('assets/css/layout');
-
             Requirements::css("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
             Requirements::css("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700,900&display=swap");
         }
