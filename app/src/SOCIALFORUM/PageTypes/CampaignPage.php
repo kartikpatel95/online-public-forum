@@ -70,7 +70,6 @@ class CampaignPage extends \Page
 
     /**
      * CMS Fields
-     * @return \SilverStripe\Forms\FieldList
      */
     public function getCMSFields()
     {

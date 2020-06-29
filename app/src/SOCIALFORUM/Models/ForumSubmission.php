@@ -102,6 +102,7 @@ class ForumSubmission extends DataObject
                     ->filter(['CloseDate:GreaterThanOrEqual' => Date('Y-m-d h:m:s')])
                     ->map('ID','Title'))
         ]);
+
         return $fields;
     }
 
@@ -116,6 +117,7 @@ class ForumSubmission extends DataObject
         }catch(\Exception $exc) {
             $result->addError($exc->getMessage());
         }
+
         return $result;
     }
 
@@ -152,10 +154,11 @@ class ForumSubmission extends DataObject
     public function onBeforeWrite()
     {
         $this->getTrimValues();
-        if(ForumSubmission::getLoggedInMember()){
+        if (self::getLoggedInMember()) {
             $this->Approved = 1;
-            $this->ApprovedByID = ForumSubmission::getLoggedInMember()->ID;
+            $this->ApprovedByID = self::getLoggedInMember()->ID;
         }
+
         return parent::onBeforeWrite();
     }
 

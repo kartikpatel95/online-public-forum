@@ -45,8 +45,7 @@ class ApprovedSubmissionsAdmin extends ModelAdmin
      */
     public function getEditForm($id = null, $fields = null)
     {
-        $form = parent::getEditForm($id, $fields);
-        return $form;
+        return parent::getEditForm($id, $fields);
     }
 
     /**
@@ -54,9 +53,10 @@ class ApprovedSubmissionsAdmin extends ModelAdmin
      */
     public function getList(){
         $list = parent::getList();
-        if($this->modelClass == 'SOCIALFORUM\ForumSubmission'){
+        if ($this->modelClass == 'SOCIALFORUM\ForumSubmission') {
             $list = ForumSubmission::get()->filter(['Approved' => 1]);
         }
+
         return $list;
     }
 }

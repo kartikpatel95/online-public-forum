@@ -20,6 +20,9 @@ class ForumPage extends \Page
      */
     private static $table_name = 'ForumPage';
 
+    /**
+     * @var string
+     */
     private static $icon_class = "font-icon-p-news-item";
 
     /**
@@ -28,6 +31,9 @@ class ForumPage extends \Page
      */
     private static $can_be_root = false;
 
+    /**
+     * @var string
+     */
     private static $description = "Add under Campaign Page";
 
     /**
@@ -83,6 +89,7 @@ class ForumPage extends \Page
             $teaser
         ]);
         $fields->addFieldToTab('Root.Submissions', $this->getForumSubmissionsData());
+
         return $fields;
     }
 
@@ -108,6 +115,7 @@ class ForumPage extends \Page
         } else {
             $result = "Submissions Open";
         }
+
         return $result;
     }
 
@@ -115,6 +123,7 @@ class ForumPage extends \Page
     {
         $submissions = ForumSubmission::get()
             ->filter(['ForumPageID' => $this->ID, 'Approved' => 1]);
+
         return count($submissions);
     }
 

@@ -56,6 +56,7 @@ class PendingApprovalAdmin extends ModelAdmin
                 ]);
             }
         }
+
         return $form;
     }
 
@@ -64,9 +65,10 @@ class PendingApprovalAdmin extends ModelAdmin
      */
     public function getList(){
         $list = parent::getList();
-        if($this->modelClass == 'SOCIALFORUM\ForumSubmission'){
+        if ($this->modelClass == 'SOCIALFORUM\ForumSubmission') {
             $list = ForumSubmission::get()->filter(['Approved' => 0]);
         }
+
         return $list;
     }
 }

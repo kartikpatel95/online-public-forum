@@ -10,6 +10,7 @@ namespace SOCIALFORUM;
 
 use Psr\Log\LoggerInterface;
 use SilverStripe\Control\Email\Email;
+use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Dev\BuildTask;
 use SilverStripe\ORM\ArrayList;
@@ -22,16 +23,30 @@ use SilverStripe\View\ArrayData;
  */
 class NonApprovedSubmissions extends BuildTask {
 
+    /**
+     * @var string
+     */
     private static $segment = 'NonApprovedSubmissions';
+
+    /**
+     * @var string
+     */
     protected $title = "Non Approved Submission Reminder";
+
+    /**
+     * @var string
+     */
     protected $description = "Sends you a reminder if there are submissions made and they are not approved";
 
+    /**
+     * @param HTTPRequest $request
+     */
     public function run($request)
     {
         $submissions = ForumSubmission::get()->filter(['Approved' => 0]);
         $members = Member::get()->filter(['Groups.Title' => 'Administrators']);
-        if($members){
-            if($submissions && count($submissions) > 0) {
+        if ($members) {
+            if ($submissions && count($submissions) > 0) {
                 $approve = ArrayList::create();
                 $count = 1;
                 foreach ($submissions as $sub) {
@@ -51,7 +66,7 @@ class NonApprovedSubmissions extends BuildTask {
                         }
                     }
                 }
-                if(count($approve) > 0){
+                if (count($approve) > 0) {
                     $email = Email::create();
                     $email
                         ->setTo($emailTo)
@@ -66,7 +81,7 @@ class NonApprovedSubmissions extends BuildTask {
                         ->send();
                 }
             }
-        }else {
+        } else {
             Injector::inst()->get(LoggerInterface::class)->error('There are no administrators set');
         }
     }
